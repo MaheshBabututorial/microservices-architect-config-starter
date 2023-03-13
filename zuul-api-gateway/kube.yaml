@@ -6,7 +6,7 @@
     name: "zuul-api-gateway"
   spec:
     ports:
-    - name: "http"
+    - name: "zuul-api-gateway"
       port: 9999
       targetPort: 9999
       nodePort: 32470
@@ -32,7 +32,7 @@
       spec:
         containers:
           - name: "zuul-api-gateway"
-            image: "deekshithsn/zuul"
+            image: deekshithsn/zuul
             imagePullPolicy: "IfNotPresent"
             ports:
               - containerPort: 9999
