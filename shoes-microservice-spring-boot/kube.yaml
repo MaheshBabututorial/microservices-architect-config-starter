@@ -1,12 +1,12 @@
-  apiVersion: "v1" 
-  kind: "Service"
+  apiVersion: v1
+  kind: Service
   metadata:
     labels:
       app: "shoe-ui"
     name: "shoe"
   spec:
     ports:
-    - name: "http"
+    - name: "shoe-ui"
       port: 1002
       targetPort: 1002
     selector:
@@ -17,7 +17,7 @@
   metadata:
     name: "shoe-ui"
     labels: 
-      app: shoe-ui
+      app: "shoe-ui"
   spec:
     replicas: 1
     selector:
@@ -26,11 +26,11 @@
     template:
       metadata:
         labels:
-          app: shoe-ui
+          app: "shoe-ui"
       spec:
         containers:
           - name: "shoe-ui"
-            image: "deekshithsn/shoe"
+            image: deekshithsn/shoe
             imagePullPolicy: "IfNotPresent"
             ports:
               - containerPort: 1002
