@@ -1,12 +1,12 @@
-  apiVersion: "v1" 
-  kind: "Service"
+  apiVersion: v1 
+  kind: Service
   metadata:
     labels:
       app: "cart-ui"
     name: "cart"
   spec:
     ports:
-    - name: "http"
+    - name: "cart-ui"
       port: 1004
       targetPort: 1004
     selector:
@@ -17,7 +17,7 @@
   metadata:
     name: "cart-ui"
     labels: 
-      app: cart-ui
+      app: "cart-ui"
   spec:
     replicas: 1
     selector:
@@ -26,7 +26,7 @@
     template:
       metadata:
         labels:
-          app: cart-ui
+          app: "cart-ui"
       spec:
         containers:
           - name: "cart-ui"
