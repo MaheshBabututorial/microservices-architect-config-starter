@@ -1,12 +1,12 @@
   apiVersion: "v1"
-  kind: "Service"
+  kind: Service
   metadata:
     labels:
       app: "react-ui"
     name: "ui-service"
   spec:
     ports:
-    - name: "http"
+    - name: "react-ui"
       port: 8080
       targetPort: 8080
     selector:
